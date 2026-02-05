@@ -4,244 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JelajahAlam - Eksplorasi Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS DASAR */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        /* NAVIGATION */
-        nav {
-            background: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-weight: bold;
-            color: #2d5a27;
-            font-size: 24px;
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #2d5a27;
-        }
-
-        /* HERO SECTION (Foto 1 & 2) */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1350&q=80'); /* Ganti dengan gambar alam */
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            background: #4CAF50;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        /* DESTINASI SECTION (Grid di Foto 1 & 2) */
-        .container {
-            padding: 50px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: #2d5a27;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-content h3 {
-            margin-bottom: 10px;
-        }
-
-        /* PERKENALAN SECTION (Halaman Baru/Foto 3) */
-        .profile-section {
-            background: #fff;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            padding: 60px 10%;
-        }
-
-        .profile-img {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .profile-img img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 15px;
-            box-shadow: 10px 10px 0px #2d5a27;
-        }
-
-        .profile-text {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .profile-text h2 {
-            font-size: 2.5rem;
-            color: #2d5a27;
-            margin-bottom: 10px;
-        }
-
-        .profile-text p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <nav>
-        <a href="#" class="logo">🌲 JelajahAlam</a>
-        <ul>
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#destinasi">Destinasi</a></li>
-            <li><a href="#perkenalan">Tentang Saya</a></li>
-            <li><a href="#">Artikel</a></li>
-        </ul>
+    <nav class="flex items-center justify-between px-10 py-4 bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex items-center gap-2 text-green-700 font-bold text-xl">
+            <span class="text-2xl">🌲</span> JelajahAlam
+        </div>
+        <div class="hidden md:flex gap-8 font-medium">
+            <a href="#" class="text-green-600">Beranda</a>
+            <a href="#destinasi" class="hover:text-green-600">Destinasi</a>
+            <a href="#profil" class="hover:text-green-600">Tentang Saya</a>
+            <a href="#" class="hover:text-green-600">Artikel</a>
+        </div>
+        <button class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition">Gabung</button>
     </nav>
 
-    <header class="hero" id="home">
-        <h1>Eksplorasi Keindahan Alam Indonesia</h1>
-        <p>Temukan pengalaman luar biasa di tempat-tempat tersembunyi yang belum pernah Anda kunjungi sebelumnya.</p>
-        <a href="#destinasi" class="btn">Mulai Jelajah</a>
+    <header class="hero-bg h-[500px] flex flex-col justify-center items-start px-10 md:px-24 text-white">
+        <h1 class="text-4xl md:text-6xl font-bold max-w-2xl mb-4 leading-tight">
+            Eksplorasi Keindahan Alam Indonesia
+        </h1>
+        <p class="text-lg md:text-xl max-w-xl mb-8 opacity-90">
+            Temukan pesona alam nusantara yang tak terlupakan dari sabang sampai merauke.
+        </p>
+        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition shadow-lg">
+            Mulai Jelajah
+        </button>
     </header>
 
-    <div class="container" id="destinasi">
-        <h2 class="section-title">Destinasi Populer</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=500&q=60" alt="Bali">
-                <div class="card-content">
-                    <h3>Pantai Pesisir</h3>
-                    <p>Nikmati deburan ombak dan pasir putih yang mempesona di pesisir pulau Indonesia.</p>
+    <section id="destinasi" class="py-16 px-10 md:px-24">
+        <h2 class="text-3xl font-bold mb-10 text-center">Destinasi Terpopuler</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Gunung Bromo</h3>
+                    <p class="text-gray-600 text-sm mb-4">Nikmati pemandangan matahari terbit yang magis di hamparan pasir yang luas.</p>
+                    <button class="text-green-600 font-semibold hover:underline">Lihat Detail →</button>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?auto=format&fit=crop&w=500&q=60" alt="Gunung">
-                <div class="card-content">
-                    <h3>Puncak Pegunungan</h3>
-                    <p>Merasakan udara segar dan pemandangan hijau dari ketinggian gunung-gunung tertinggi.</p>
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1537953391148-f4f144933742?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Pantai Raja Ampat</h3>
+                    <p class="text-gray-600 text-sm mb-4">Surga bawah laut dengan keanekaragaman hayati tertinggi di dunia.</p>
+                    <button class="text-green-600 font-semibold hover:underline">Lihat Detail →</button>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&w=500&q=60" alt="Camping">
-                <div class="card-content">
-                    <h3>Area Berkemah</h3>
-                    <p>Habiskan malam di bawah bintang-bintang dengan fasilitas camping yang lengkap.</p>
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1596395819057-e37f55a8528a?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Danau Toba</h3>
+                    <p class="text-gray-600 text-sm mb-4">Keajaiban geologi vulkanik terbesar dengan pulau Samosir di tengahnya.</p>
+                    <button class="text-green-600 font-semibold hover:underline">Lihat Detail →</button>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="profile-section" id="perkenalan">
-        <div class="profile-img">
-            <img src="https://via.placeholder.com/350x500" alt="Mochamad Fanani Zarkasyi"> 
+    <section id="profil" class="py-16 bg-green-50 px-10 md:px-24">
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
+            <div class="md:w-1/2">
+                <img src="https://i.postimg.cc/gjxRFSrQ/IMG-20260205-WA0018.jpg" alt="Mochamad Fanani Zarkasy" class="w-full h-full object-cover min-h-[400px]">
+            </div>
+            <div class="md:w-1/2 p-10">
+                <h4 class="text-green-600 font-bold tracking-widest uppercase text-sm mb-2">Halo, Perkenalan</h4>
+                <h2 class="text-3xl font-bold mb-4">Mochamad Fanani Zarkasy</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Saya adalah seorang penjelajah alam dan pengembang web yang memiliki ketertarikan besar pada keindahan alam Indonesia. Website ini dibuat untuk mendokumentasikan perjalanan saya dan membantu orang lain menemukan destinasi impian mereka.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-semibold">Kontak Saya</a>
+                </div>
+            </div>
         </div>
-        <div class="profile-text">
-            <h2>Halo, Saya <br><strong>Mochamad Fanani Zarkasyi</strong></h2>
-            <p>Selamat datang di halaman perkenalan saya. Saya adalah seorang pecinta alam dan petualang yang senang menjelajahi keindahan tersembunyi di Indonesia.</p>
-            <p>Melalui website JelajahAlam ini, saya ingin membagikan pengalaman serta informasi mengenai destinasi wisata yang wajib dikunjungi bagi kamu yang suka berpetualang dan mencari ketenangan di alam liar.</p>
-            <a href="mailto:zarkasyi@example.com" class="btn">Hubungi Saya</a>
-        </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 JelajahAlam. Dibuat dengan cinta untuk Indonesia.</p>
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p class="opacity-70">&copy; 2026 JelajahAlam. Dibuat dengan cinta untuk Indonesia.</p>
+        <p class="text-sm mt-2 font-semibold">Mochamad Fanani Zarkasy</p>
     </footer>
 
 </body>
